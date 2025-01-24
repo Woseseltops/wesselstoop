@@ -1,0 +1,292 @@
+<html>
+<head>
+	<title>Wessel Stoop</title>
+	<link href='https://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet'>	
+    <link href='https://fonts.googleapis.com/css?family=Yeseva+One' rel='stylesheet'>
+ 	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="theme-color" content="#f5764a">
+	<meta name="viewport" content="width=device-width">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ 	<script type="text/javascript">
+
+ 	$(document).ready(function()
+ 	{
+	    // Replace all SVG images with inline SVG
+	    jQuery('img.svg').each(function()
+	    {
+	        var $img = jQuery(this);
+	        var imgID = $img.attr('id');
+	        var imgClass = $img.attr('class');
+	        var imgURL = $img.attr('src');
+
+	        jQuery.get(imgURL, function(data) 
+	        {
+	            // Get the SVG tag, ignore the rest
+	            var $svg = jQuery(data).find('svg');
+
+	            // Add replaced image's ID to the new SVG
+	            if(typeof imgID !== 'undefined') {
+	                $svg = $svg.attr('id', imgID);
+	            }
+	            // Add replaced image's classes to the new SVG
+	            if(typeof imgClass !== 'undefined') {
+	                $svg = $svg.attr('class', imgClass+' replaced-svg');
+	            }
+
+	            // Remove any invalid XML tags as per http://validator.w3.org
+	            $svg = $svg.removeAttr('xmlns:a');
+
+	            // Replace image with new SVG
+	            $img.replaceWith($svg);
+
+			    //Remove all color from the original file
+			    $('path').css("fill", "");            
+
+	        }, 'xml');
+
+	    });
+
+	    $('a.icon').mouseenter(function()
+	    {
+	    	$(this).find('path').addClass('selected_icon');
+	    });
+
+	    $('a.icon').mouseleave(function()
+	    {
+	    	$(this).find('path').removeClass('selected_icon');
+	    });
+
+
+	});
+ 	</script>
+
+</head>
+<body>
+<div class="section" id="title">
+	<h1>Wessel Stoop</h1>
+	<h2>Machine learning, language, videogames</h2>
+	<div class="line h2"></div>
+</div>
+
+<div class="section white_section" id="welcome">
+	<div class="left_photo">
+		<img class="sidephoto" src="img/me.JPG">
+	</div>
+	<div class="right_text">
+		<h3 class="photo_present">Welcome</h3>
+		<div class="line h3"></div>
+		<a title="welcome">	</a>
+		<p>Welcome! My name is Wessel Stoop. I work with language & machine learning, and make videogames in my free time. This website aims to be a collection of the software and prose I write, and what the media subsequently write about these. Furthermore, this website contains some pictures of me to suggest that I totally do not spend all of my waking hours staring at a computer screen.</p>
+		<div class="logobar">
+			<a class="icon nonselected_icon" target="_blank" href="mailto:stoopwessel@gmail.com"><img class="svg" src="icon/gmail.svg"></a>
+			<a class="icon nonselected_icon" target="_blank" href="https://nl.linkedin.com/in/wessel-stoop-45886466"><img class="svg" src="icon/linkedin.svg"></a>
+			<a class="icon nonselected_icon" target="_blank" href="https://github.com/woseseltops"><img class="svg" src="icon/github.svg"></a>
+			<a class="icon nonselected_icon" target="_blank" href="https://youtube.com/wesselstoop"><img class="svg" src="icon/youtube.svg"></a>
+		</div>
+	</div>
+</div>
+
+<div class="section background_section" id="science">
+	<h3>Science</h3>
+	<div class="line h3"></div>
+	<a title="science"></a>	
+	<ul class="publications">
+		<li>W. Stoop, F. Kunneman, A. van den Bosch & B. Miller (2019). <span class="no_link">Detecting harassment in real-time as conversations develop.</a>		
+		<div class="explanation">We developed a machine-learning-based method to detect video game players that harass teammates or opponents in chat earlier in the conversation. In this paper we visualize what the classifier is doing at each point in the conversation, and show that the confidence threshold above which a player should be considered toxic should start really low in the beginning of a conversation, and should then slowly increase. <div class="reference">Proceedings of the 3th Workshop on Abusive Language Online</div></div></li>
+
+		<li>D. Foster, S. Aalberse & W. Stoop (2019)</a>. <span class="no_link">Examining Twitter as a source for address research using Colombian Spanish.</a>		
+		<div class="explanation">In Columbian Spanish, you choose between <em>tu</em>, <em>usted</em> and <em>vos</em> when you want to say <em>you</em>. This paper shows you can use Twitter to figure out when which one is used; we see clear regional preferences, but also social and emotional effects. <div class="reference">B. Kluge & M. I. Moyna (eds.): It’s not all about you. New perspectives on address research</div></div></li>
+
+		<li>S. Cassidy, O. Crasborn, H. Nieminen, W. Stoop, M. Hulsbosch, S. Even, E. Komen & T. Johnston (2018). <a target="_blank" href="https://www.aclweb.org/anthology/L18-1374">Signbank: Software to Support Web Based Dictionaries of Sign Language.</a>		
+		<div class="explanation">Signbank is basically a sign dictionary with a huge set of extra tools for sign language researchers; this is a proxy paper for all the software development that has been done by me and colleagues. The exciting part of the Signbank project I'm part of is that it has the ambition to bring many many datasets from different sign languages all together in one database, allowing groundbreaking new research. <div class="reference">LREC 2018 Proceedings</div></div></li>
+
+		<li>I. Hendrickx, L. Onrust, F. Kunneman, A. Hurriyetoglu, W. Stoop & A. van den Bosch (2017). <a target="_bank" href="http://www.digitalhumanities.org/dhq/vol/11/4/000342/000342.html">Unraveling reported dreams with text analytics.</a>		
+		<div class="explanation">An important way to research dreams is to study written descriptions of dreams; huge collections of dream reports have been created to facilitate this approach. This analysis, however, has so far only be done by hand. In this paper, we show what various natural language processing tools can add to this research field. <div class="reference">DHQ, 11.4, </div></div></li>
+
+		<li>W. Stoop, I. Hendrickx & T. van Ees (2017). <span class="no_link">PaperClip: automated dossier reorganizing.</span>
+		<div class="explanation">This paper was produced at fintech company Davinci. One of Davinci's main products does information extraction for the financial sector, on <em>individual documents</em>. Unfortunately, customers often deliver documents in large files containing multiple documents, sometimes even with the pages shuffled. Our proposed solution PaperClip solves this by analyzing the content on the pages of such a dossier, trying to guess the document type and the page number, and returns single document files with pages in the correct order. <div class="reference">Proceedings of the 6th International Conference on Pattern Recognition Applications and Methods - Volume 1: ICPRAM, pages 471-478</div></div></li>
+
+		<li>L. Verheijen & W. Stoop (2016). <a href="https://www.researchgate.net/publication/307587308_Collecting_Facebook_posts_and_WhatsApp_chats_Corpus_compilation_of_private_social_media_messages">Collecting Facebook posts and WhatsApp chats: corpus compilation of private social media messages.</a>
+		<div class="explanation">For digital language researchers, Twitter has been the main resource so far. Facebook, which has a much larger audience, is unfortunately not open for research. We describe a way to get access to Facebook language (or other data), creating a so-called 'Facebook app' that greatly facilitates voluntary data donation.<div class="reference">In P. Sojka et al. (eds.), Text, Speech and Dialogue: 19th International Conference, TSD 2016, LNAI 9924 (pp. 249-258). Springer.</div></div></li>
+
+		<li>S. Aalberse & W. Stoop (2015). <a target="_blank" href="http://fulltext.study/download/932545.pdf">The exceptional loss of the pronoun T.</a>
+		<div class="explanation">A linguistic paper about a theory why the form 'du' has disappeared from Dutch, while almost all related languages still have it. We introduce a more computational approach for text style for this particular research question.<div class="reference">Journal of Pragmatics, 88, 190-201. doi: 10.1016/j.pragma.2015.07.003</div></div></li>
+
+		<li>W. Stoop & A. Van den Bosch (2014). <a target="_blank" href="http://www.aclweb.org/anthology/E/E14/E14-1034.pdf">Using ideolects and sociolects to improve word prediction.</a>
+		<div class="explanation">We describe how you can improve text prediction for a person by training the predictor on his/her own written texts (an idea we call 'idiolect', taken from sociolinguistics). As an example, we predict tweets of a person by training on the earlier tweets of that same person. Interestingly, friends talk that much alike that you can also train on the tweets of friends and have even better predictions. <a target="_blank" href="http://cls.ru.nl/staff/wstoop/twitter_communities.zip">Download the data</a>.<div class="reference">Proceedings of EACL 2014, 318 - 327</div></div></li>
+
+		<li>W. Stoop & A. Van den Bosch (2014). <a href="http://antalvandenbosch.ruhosting.nl/papers/dujal.pdf">Improving word prediction for augmentative communication by using idiolects and sociolects.</a></span>
+		<div class="explanation">Another paper about text prediction, this time focusing on how it can be used to help people with impaired language and/or speech: even if no linguistic material is available for a patient, a useful language model can be trained using written language by people close to this person.<div class="reference">Dutch Journal of Applied Linguistics, 3:2, pp. 136-153. </div></div></li>
+
+		<li>K. de Schepper, G. van Bergen, S. Lestrade & W. Stoop (2013). <a target="_blank" href="http://keesdeschepper.ruhosting.nl/PraigRais.pdf">Prag-raising versus Neg-raising.</a>
+		<div class="explanation">Saying <em>Ik geloof niet dat hij komt</em> (I don't believe that he will come) while meaning <em>Ik geloof dat hij niet komt</em> (I believe that he will not come) is a well described phenomenon in linguistics called <em>neg raising</em>: the negation 'moves' moves from the subclause to the main clause. In this short paper, we describe that this can also happen with pragmatic markers in Dutch. For example, you can say <em>Ik geloof toch dat hij komt</em> (I believe anyway that he comes) while meaning <em>Ik geloof dat hij toch komt</em> (I believe that he comes anyway).<div class="reference">Nederlandse Taalkunde 19, 1, 105 - 117</div></div></li>
+
+		<li>W. Stoop (2013). <a target="_blank" href="texts/cld.pdf">CLD, dat is niet contrastief.</a>
+		<div class="explanation">A linguistic paper about the Dutch construction <em>Wessel die bouwt een website</em>. It was believed previously that construction was used to indicate contrast. I show that it is used in a contrastive environment in only a small part of the cases, and offer some alternative hypotheses.<div class="reference">Tabu 39 (1/2), 49 - 61</div></div></li>
+
+		<li>G. van Bergen, W. Stoop, J. Vogels & H. de Hoop (2011). <a target="_blank" href="https://www.meertens.knaw.nl/cms/files/GvanBergen1295_001.pdf">Leve hun! Waarom hun nog steeds hun zeggen.</a> <div class="explanation">In Dutch, the word <em>zij</em> (they) is slowly but steadily being replaced by <em>hun</em> (them), a phenomenon that has been described various times in the study of language change. This change is extremely controversial and despised by language purists, but this does not seem to halt its rise. In this paper, we describe a potential explanation for its popularity: unlike <em>zij</em>, <em>hun</em> can only refer to humans, which would make it more efficient in conversation. <div class="reference">Nederlandse taalkunde 16 (1), 2 - 29</div></div></li>
+	</ul>
+</div>
+
+<div class="section white_section smaller_column" id="games">
+	<h3>Games</h3>
+	<div class="line h3"></div>
+	<a title="games"></a>	
+	<h4><a target="_blank" href="http://olvand.com">Olvand</a></h4>
+	<p><em>Olvand</em> is a small multiplayer role playing game. It encourages players to build towns together, and contains various minigames. At its peak, it had an active fanbase of around a hundred people, running servers and creating secundary material like tutorials, wikis and Youtube videos.</p>
+
+	<a target="_blank" href="http://olvand.com"><video class="gif visual_content" autoplay loop=true>
+	  <source src="gif/QuaintTestyEland.webm" type="video/webm">
+	</video></a>
+
+	<h4><a target="_blank" href="https://github.com/languageininteraction/TacitCommunicationGame?files=1">Tic Tac Team</a></h4>
+	<p><em>Tic Tac Team</em> is a two-player puzzle game for the Apple iPad. It contains almost no language, which forces the two players to figure out the game mechanics together, and then create a small communication system to achieve their goals. <em>Together with Jop van Heesch</em>.</p>
+
+	<a target="_blank" href="https://github.com/languageininteraction/TacitCommunicationGame?files=1"><video class="gif visual_content" autoplay loop=true>
+	  <source src="gif/OffensiveAdolescentImperialeagle.webm" type="video/webm">
+	</video></a>
+
+	<h4><a target="_blank" href="https://github.com/languageininteraction/VowelSpaceTravel">Vowel Space Travel</a></h4>
+	<p><em>Vowel Space Travel</em> is a simple tool that asks the player to identify differences between vowels in English, hoping that this will improve their language skills. My goal was to make an app around this repetitive task that makes it more attractive, in a futuristic setting.</p>
+
+	<a target="_blank" href="https://github.com/languageininteraction/VowelSpaceTravel"><div class="image_row"><img src="img/VST_vowels.jpg"><img src="img/VST_result.jpg"></div></a>
+
+</div>
+
+<div class="section smaller_column background_section" id="writings">
+	<h3>Writings</h3>
+	<div class="line h3"></div>
+	<a title="writings"></a>
+	<h4>Interactive explanations</h4>
+	<p>I'm a big proponent of explaining complicated things with interactive visualizations: being able to 'play with an idea' is not only a much more efficient way to understand something, I believe it will also make the understanding much deeper.</p>
+
+		<ul>
+			<li><a href="https://pudding.cool/2019/04/text-prediction/">How algorithms know what you'll type next</a>: a story about how text predictors work in the really cool magazine <em>The Pudding</em>. Also see <a href="https://www.instagram.com/p/BwFrFdxhbQy/?utm_source=ig_web_copy_link">their Instagram post about it</a>.</li>
+		</ul>
+
+		<video class="webm visual_content" autoplay loop=true>
+		  <source src="gif/text-prediction.webm" type="video/webm">
+		</video>
+
+	<h4>Non-interactive texts</h4>
+	<p>Game design</p>
+		<p>I've documented the development of my hobby game Olvand quite intensively. The blogs can be found at IndieDB. Some highlights: </p>
+		<ul>
+			<li><a target="_blank" href="http://www.indiedb.com/games/olvand/news/sound-effects-in-olvand">Sound effects in Olvand</a>: discusses the importance of sound effects to various gameplay experiences.</li>
+			<li><a target="_blank" href="http://www.indiedb.com/games/olvand/news/the-musical-theme-for-home-in-olvand">The musical theme for 'home' in Olvand</a>: discusses the little melody that represents 'home', which can be heard throughout Olvand's music.</li>
+			<li><a target="_blank" href="http://www.indiedb.com/games/olvand/news/glux-olvands-new-graphics-and-lighting-engine">Glux: Olvand's new graphics and lighting engine</a>:  explains in a lot of technical detail how Olvand's self-built lighting system works.</li>
+			<li><a target="_blank" href="http://www.indiedb.com/games/olvand/news/my-email-adventure">My email adventure</a>: describes the unexpected results of a simple email survey to the players.</li>
+			<li><a target="_blank" href="http://www.indiedb.com/games/olvand/news/olvand-and-a-leveling-system">Olvand and a leveling system</a>: discusses the good and bad aspects of leveling systems.</li>
+		</ul>
+	<p>Language technology</p>
+		<ul>
+			<li><a target="_blank" href="http://davincigroep.nl/_private/davinci/user_files/docs/DocStreet Whitepaper_NL (1).pdf">PaperClip whitepaper</a>: describes my search for a solution to turn files containing multiple documents into a folder of files that all contain one document (for my employer Davinci).</li>
+			<li><a target="_blank" href="http://www.notas.nl/dixit/dixit_2014_apps.pdf">Textpredictie-app Swiftkey</a>: a piece about text prediction in Dixit, a magazine about language and speech 
+			technology.</li>
+			<li>Taal voorspellen: a description of Soothsayer in Vaktaal, aimed at Neerlandicists around the world.</li>
+		</ul>
+	<p>Linguistics</p>
+		<p>I've written a number of popular science writings about linguistics in Dutch, aimed students and researchers of linguistics. Highlights:</p>
+		<ul>
+			<li><a href="texts/snotneus.html">Waarom het woord "snotneus" geen toeval is</a>: I show that in languages around the world the world for 'nose' contains a nasal sound (sounds that use the nasal cavity) far more often than you would expect based on chance.</li>
+			<li><a href="texts/onze.html">Hoe ik een familie-adjectief afpakte</a>: my parents, speaking Brabantian dialect, refer to me differently than to my sister for unclear reasons. A linguistic theory for why this is the case.</li>
+			<li><a href="texts/reepjes.html">Taaie reepjes</a>: an anecdote how low educated workers subconsciously came up with an etymological theory for the word 'tie wrap'.</li>
+			<li><a href="texts/plasterk.html">Ronald Plasterk, taalveranderwonderman</a>: a response to the response of minister Plasterk to our research about 'hun' as syntactical subject on national television.</li>
+		</ul>
+</div>
+
+<div class="section white_section smaller_column" id="software_projects">
+	<h3>Software projects</h3>
+	<div class="line h3"></div>
+	<a title="software"></a>
+	<h4><a target="_blank" href="http://youarewhatyoutweet.nl">You are what you tweet</a> (<a target="_blank" href="http://github.com/woseseltops/youarewhatyoutweet">github</a>)</h4>
+		<p><em>You are what you tweet</em> is a webdemo displaying the power of language technology and machine learning: it imports all tweets of a particular Twitter timeline, and then performs text prediction and term profiling on it, as well as text classification. For that last task, it has language models for gender, age, aggression and sarcasm. <em>Together with Florian Kunneman</em>.</p>
+
+		<video class="webm visual_content" autoplay loop=true>
+		  <source src="gif/youarewhatyoutweet.webm" type="video/webm">
+		</video>
+
+	<h4><a target="_blank" href="http://stemming2017.nl">Stemming2017</a> (<a target="_blank" href="https://github.com/Woseseltops/stemming2017">github</a>)</h4>
+		<p><em>Stemming 2017</em> is a webdemo displaying research by Eric Sanders on whether you can predict elections based on language analysis on Twitter. With over 10.000 visitors, this is my most popular project to date. Unfortunately, the predictions were further off than we'd hoped (but still a lot better than chance). <em>Together with Eric Sanders</em>.</p>
+
+		<video class="webm visual_content" autoplay loop=true>
+		  <source src="gif/stemming2017.webm" type="video/webm">
+		</video>
+
+	<h4><a target="_blank" href="http://soothsayer.cls.ru.nl">Soothsayer</a> (<a target="_blank" href="http://github.com/woseseltops/soothsayer">github</a>)</h4>
+		<p><em>Soothsayer</em> is my master's thesis project about text prediction. In the thesis, I showed that text prediction improves when (1) using language models based on text written by the user and (2) that text written by friends of the user also improve the results. In the demo, you can test Soothsayer with various language models. The thesis led to various publications, media attention, and the Radboud University 2013 thesis prize. I explain my project in the video below:</p>
+
+		<iframe class="visual_content"
+		src="https://www.youtube.com/embed/3QGZ83rgNYk" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+		</iframe>
+
+	<h4 class="no_link">Robot Nao colleague guessing game</h4>
+		<p><em>Robot Nao</em> visited the department where I work. As a fun sideproject, I wrote a game for it where it asks questions that should be answered with yes or no. With this information, it can guess which colleague you had in mind (apologies for the vertical video ;) ):</p>
+
+		<iframe class="visual_content" src="https://player.vimeo.com/video/160604320" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+	<h4><a target="_blank" href="https://www.assetstore.unity3d.com/en/#!/content/55540">Procedural meshes & subdivision</a></h4>
+		<p>Catmull-Clark subdivision is a smoothing algorithm and a basic tool in 3D modeling software. It was, however, not yet available for the Unity game engine. I created an implementation of it, which is available at the Unity Asset Store.</p>
+
+		<img class="single_image visual_content" src="img/catmullclark.JPG">
+
+	<h4><a target="_blank" href="http://fowlt.net">Fowlt</a> (<a target="_blank" href="http://github.com/woseseltops/fowlt">github</a>)</h4>
+		<p>Fowlt is the English version of Valkuil, a context-sensitive spelling corrector using machine learning. It recognizes errors by comparing all incoming text to the many examples of correct text it has seen. If it finds something that is nearly identical, but not completely identical, to a frequent pattern, it marks it as an error. This way, it is able to mark errors where other spelling correctors typically fail, like the difference between <em>to</em>, <em>two</em> and <em>too</em>, or the difference between <em>there</em>, <em>their</em> and <em>they're</em>.</p>
+
+		<img class="single_image visual_content" src="img/fowlt.PNG">
+
+</div>
+
+<div class="section smaller_column background_section" id="media_attention">
+	<h3>Media attention</h3>
+	<div class="line h3"></div>
+	<a title="media"></a>
+	<div class="column">
+			<p>You are what you tweet</p>
+			<ul><li><a target="_blank" href="http://numrush.nl/2016/11/08/you-are-what-you-tweet-radboud/">ru.nl</a></li><li><a target="_blank" href="http://www.nporadio1.nl/de-taalstaat/uitzendingen/419493-2016-11-05">NPO radio 1, De Taalstaat</a></li><li><a target="_blank" href="https://www.rtlz.nl/tech/je-bent-wat-je-tweet-zo-kinderachtig-ben-jij-niet-op-twitter">RTL Z</a></li><li><a target="_blank" href="http://www.n1.nl/radboud-onderzoekers-maken-programma-om-tweets-te-analyseren/nieuws/item?835669">n1</a></li><li><a target="_blank" href="http://numrush.nl/2016/11/08/you-are-what-you-tweet-radboud/">numrush</a></li></ul>
+			<p>Thesis prize</p>
+			<ul><li><a target="_blank" href="http://www.ru.nl/nieuws-agenda/nieuws/vm/2014/sep/opening-academisch/">ru.nl</a></li><li><a target="_blank" href="https://www.youtube.com/watch?v=3QGZ83rgNYk">YouTube video</a></li></ul>
+			<p>Soothsayer</p>
+			<ul><li><a target="_blank" href="http://www.ru.nl/lst/virtualnews/news/koppelingen/soothsayer-voorspelt/">ru.nl</a></li><li><a target="_blank" href="https://tweakers.net/nieuws/91687/nederlandse-student-ontwikkelt-sociale-tekstvoorspeller.html">Tweakers</a></li><li><a target="_blank" href="http://www.apparata.nl/nieuws/nederlander-bedenkt-app-die-voorspelt-wat-je-wil-typen-3588">apparata.nl</a></li><li><a target="_blank" href="http://voxweb.nl/nieuws/computer-raadt-wat-jij-gaat-twitteren">Vox</a></li></ul>
+			<p>Fowlt</p>
+			<ul><li><a target="_blank" href="http://www.ru.nl/nieuws-agenda/nieuws/vm/language-studies/taalwetenschap/2013/'huh-'-iedereen/@877641/new-smarter-free/">ru.nl</a></li><li>De Gelderlander</li></ul>
+			<p><em>Hun</em> as syntactical subject</p>
+			<ul><li><a target="_blank" href="http://www.ru.nl/taalwetenschap/actueel/@716731/hun_blijven_hun/">ru.nl</a></li><li><a target="_blank" href="http://www.nu.nl/wetenschap/2176385/hun-als-onderwerp-niet-meer-roeien.html?redirect=1">nu.nl</a></li><li><a target="_blank" href="https://www.youtube.com/watch?v=ahERo5iuel4">DWDD</a></li><li><a target="_blank" href="http://www.blindeschildpad.nl/2010/02/brekend-nieuws-ronald-plasterks.html">Blinde schildpad</a></li></ul>
+	</div>
+	<div class="column">
+			<p>My work at Davinci</p>
+				<ul>
+					<li><a href="https://www.businessinsider.nl/waarom-kunstmatige-intelligentie-bank-en-klant-kan-helpen-davinci/">Business insider</a></li>
+				</ul>
+
+			<p>Stemming2017</p>
+				<ul>
+					<li><a href="http://www.ru.nl/nieuws-agenda/nieuws/vm/language-studies/taalwetenschap/2017/twitter-peiling/">ru.nl</a></li>
+					<li><a href="http://www.ad.nl/verkiezingen/serieuze-peiling-of-leuk-experiment~abcdbe4e/">Algemeen Dagblad</a></li>
+					<li><a href="http://www.telegraaf.nl/binnenland/27644411/__Serieus_of_leuk_experiment___.html">Telegraaf</a></li>
+					<li><a href="http://www.rd.nl/vandaag/binnenland/serieuze-peiling-of-leuk-experiment-1.1376305">Reformatorisch Dagblad</a></li>
+					<li><a href="http://www.nporadio1.nl/de-ochtend/uitzendingen/514546-2017-02-16">NPO radio 1, De Ochtend</a></li>
+					<li><a href="http://www.nporadio1.nl/de-taalstaat/uitzendingen/453739-2017-03-18">NPO radio 1, De Taalstaat</a></li>
+					<li><a href="http://www.gelderlander.nl/nijmegen/meer-twitterzetels-voor-kleine-partijen-concludeert-radboud-onderzoeker~ad3c756c/">De Gelderlander</a></li>
+					<li><a href="http://www.omroepgelderland.nl/nieuws/2130169/Twitteronderzoeker-PVV-wint-verkiezingen">Omroep Gelderland</a></li>
+					<li><a href="http://www.brekend.nl/2017/02/16/de-politieke-peilingen-maar-dan-volgens-twitter/">brekend.nl</a></li>
+					<li><a href="http://www.dekennisvannu.nl/site/artikel/In-Twitterpeiling-doen-kleine-partijen-het-goed/8867">De kennis van nu</a></li>
+					<li><a href="https://www.emerce.nl/nieuws/kleine-partijen-doen-goed-twitter">emerce.nl</a></li>
+					<li><a href="http://www.dagelijksestandaard.nl/2017/02/vnl-en-fvd-komen-met-5-en-2-zetels-de-tweede-kamer-in-als-het-aan-deze-interessante-peiler-ligt/">De Dagelijkse Standaard</a></li>
+					<li><a href="http://www.duurzaamnieuws.nl/alle-peilingen-op-een-rij-voor-de-tweede-kamerverkiezingen-2017/">Duurzaam nieuws</a></li>
+					<li><a href="http://politiek.tpo.nl/2017/02/22/peilingwatch-hoop-nieuwkomers-als-geenpeil-en-vnl-op-twitter-goed/">The Post online</a></li>
+					<li><a href="https://www.surf.nl/nieuws/2017/02/het-aantal-zetels-in-de-tweede-kamer-op-basis-van-tellingen-op-twitter.html">surf.nl</a></li>
+
+				</ul>
+	</div>
+
+</div>
+
+<div class="section" id="photos">
+	<img class="photo_section" src="img/guardsworditalica.png">
+</div>
+
+</body>
+
+</html>

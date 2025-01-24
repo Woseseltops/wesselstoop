@@ -1,0 +1,381 @@
+body
+{
+	font-family: 'Muli', sans-serif;	
+  background-image: url("img/sevilla_park.JPG");
+
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+
+  margin:0px;
+  text-decoration-skip: ink;
+}
+
+h1
+{
+  font-size: 80px;
+  top: 40%;  
+  color: white; 
+}
+
+h2
+{
+  font-size: 20px;
+  position: relative;
+  top: 33%;
+  color: rgba(255,255,255,0.6);
+}
+
+h1,h2
+{
+  text-align: center;  
+  position: relative;
+  font-weight: 100;
+}
+
+h1,h3 
+{
+  font-family: 'Yeseva One';	
+}
+
+h3 
+{
+  font-size: 55px;
+  font-weight: 100;
+  margin-top: 0px;
+
+  /* This ugly code makes the gradient */
+  background-color: #f54949;	
+  background-image: -moz-gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.08, #f5764a));
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.08, #f5764a));
+  background-image: gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.08, #f5764a));
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* This needs to be here for the underline to work */
+  position: relative;
+}
+
+h4
+{
+  margin-left: -10px;
+}
+
+td
+{
+  color: white;
+  vertical-align: top;
+  padding-right: 125px;
+}
+
+a, a:visited
+{
+  color: #f5764a; 
+}
+
+iframe
+{
+  border: 0px;
+}
+
+.publications li
+{
+  margin: 20px;
+}
+
+.section
+{
+  color: white;
+  padding: 6vw;
+  overflow: hidden;
+}
+
+.sidephoto
+{
+  height: 100%;
+}
+
+.white_section
+{
+  background-color: rgb(252,251,246);
+  color: black;
+}
+
+.left_photo
+{
+  float: left;
+  width: 475px;
+}
+
+.right_text
+{
+  float: left;
+  width: 42%;
+  padding: 80px;
+}
+
+.line
+{
+  position: relative;
+  width: 300px;
+  height: 2px;
+}
+
+.h2
+{
+  background-color: white;
+  top: 35%;  
+  margin: auto;
+}
+
+.h3
+{
+  background-color: hsl(15,100%,60%);
+  margin-top: -40px;
+  margin-bottom: 50px;
+  display: flex;
+}
+
+.smaller_column
+{
+  padding-left: 30vw;
+  padding-right: 30vw;
+}
+
+.logobar svg
+{
+  margin: 10px;
+}
+
+.nonselected_icon
+{
+  fill : rgb(197, 196, 192);;
+}
+
+.selected_icon
+{
+  fill: #f5764a;
+  cursor: pointer;
+}
+
+.explanation
+{
+  margin: 15px;  
+  color: hsl(0, 0%, 75%);
+  font-size: 13px;
+}
+
+.reference
+{
+  color: white;
+  font-size: 10px;
+  display: inline;
+  font-style: italic;
+}
+
+.no_link
+{
+  color: #f5764a;   
+}
+
+.image_row img
+{
+  width: 345px;
+  margin: 10px;
+}
+
+.single_image
+{
+  width: 345px;
+}
+
+.gif
+{
+  width: 576px;
+  height: 332px;  
+}
+
+.photo_present
+{
+  background-image: -moz-gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.5, #f5764a));
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.5, #f5764a));
+  background-image: gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(0.5, #f5764a));
+}
+
+.photo_section
+{
+  width: 100%;
+}
+
+.background_section
+{
+  background-size: auto 100vw;
+  background-position: center;
+}
+
+.column
+{
+  float: left;
+  margin-right: 85px;
+}
+
+.visual_content
+{
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 430px;
+}
+
+#title
+{
+  height: 800px;
+
+  background-image: -moz-gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(50%, #f5764a));
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgba(245,73,73,0.8)), color-stop(50%, rgba(245,118,73,0.8)));  
+  background-image: gradient( linear, left top, right top, color-stop(0, #f54949), color-stop(50%, #f5764a));  
+}
+
+#welcome
+{
+  height: 475px;
+  padding: 0px;
+}
+
+#welcome .photo_present:after
+{
+  left: 33vw;
+}
+
+#games
+{
+}
+
+#writings
+{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url('img/palm.JPG');
+  font-size: 15px;
+}
+
+#science
+{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('img/science.jpg');
+  position:relative;
+  font-size: 15px;
+}
+
+#software_project
+{
+  font-size: 15px;
+}
+
+#photos
+{
+  padding: 0px;  
+}
+
+#software_projects .photo_present:after
+{
+  left: 23vw;
+}
+
+#media_attention
+{
+  background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('img/paper.jpg');
+}
+
+/* Mobile style */
+@media only screen and (max-width: 1100px)
+{
+
+  /*Small changes to make the welcome message fit*/
+  .right_text
+  {
+    padding-top:50px;
+    padding-right: 5px;
+  }
+
+  /* The background behavior changes so it never repeats */
+  .background_section
+  {  
+    background-size: auto 100%;
+    background-position: center;
+  }
+}
+
+@media only screen and (max-width: 800px)
+{
+  /*From here, my portrait will fill the entire sxcreen*/
+  .sidephoto
+  {
+    width: 100vw;
+    height: auto;
+  }
+
+  /* Text drops below portrait */
+  #welcome
+  {
+    height: 160vw;
+  }
+
+  .right_text
+  {
+    width: 80vw;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 500px)
+{
+  /* Change the look of the title screen */
+  h1
+  {
+    top: 30%;
+  }
+
+  h2
+  {
+    font-size: 18px;
+    top: 27%;
+  }
+
+  /* Don't show the white line anymore */
+  .h2
+  {
+    display: none;
+  }
+
+  /* We need a lot more vertical room for the welcome message now */
+  #welcome
+  {
+    height: 1000px;
+  }
+
+  .right_text
+  {
+    padding: 40px;   
+  }
+
+  /* No room for explanations of all publications */
+  .explanation
+  {
+    display: none;
+  }
+
+  .gif
+  {
+    width: 100%;
+  }
+
+  .image_row img
+  {
+    width: 100%;
+  }
+
+  .smaller_column
+  {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
